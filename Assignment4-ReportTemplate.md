@@ -24,6 +24,7 @@ This mutant replaces the return value with 0.0 instead of the lowerBound. This m
 This mutant replaces the addition between "this.lower / 2.0" and "this.upper / 2.0" and replaces it with subtraction. This mutant was then killed by our original test suite as the output for all test cases completely changes. For example our test with a range of -1,1 expects a return of 0, however with this mutant the return becomes (-1 / 2) - (1 / 2) = -1 and thus the test case fails and mutant is killed.
 
 ### shift : removed call to org/jfree/data/util/ParamChecks::nullNotPermitted -> SURVIVED
+This mutant removes the call to nullNotPermitted at the start of the function completely. This mutant survived in our original test suite as we didnt create a test that gave a null Range. This caused all our original unit tests to pass as none of them utilized this function call.
 
 ### contains : greater than to less or equal -> KILLED
 
@@ -32,8 +33,10 @@ This mutant replaces the addition between "this.lower / 2.0" and "this.upper / 2
 ### expandToInclude : greater or equal to greater than -> SURVIVED
 
 ### expand : removed call to org/jfree/data/Range::getLength -> KILLED
+This mutant removed the call to getLength in "double length = getLength()". This mutant failed as it then tried to subtract the uninitialized "length" and resulted in an error, causing the test to fail and the mutant to be killed.
 
 ### shiftWithNoZeroCrossing : Substituted 0.0 with 1.0 -> SURVIVED
+This mutant substitutes the 0.0 in "if(value > 0.0)" to 1.0. This mutant survived our original tests as all the tests we had either had value less then 0 (in this case the expected equility doesnt change) or value was greator then 1.0 (which again wouldnt result in a change of expected equality).
 
 ### equals : replaced boolena return with false for org/jfree/data/Range::equals -> KILLED
 
