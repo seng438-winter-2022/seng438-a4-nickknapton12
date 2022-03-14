@@ -10,7 +10,7 @@
 |                |  Colin Christophe   |
 
 # Introduction
-
+In this lab we experimented with mutation testing on the JFreeChart software provided in the lab. We took our unit tests developed in assignment 2 and 3 to evalute them against the mutants created. We used knowledge of different types of mutants presented in class along with documentation online to identify where our tests could improve and fix them.
 
 # Analysis of 10 Mutants of the Range class
 
