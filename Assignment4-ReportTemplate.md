@@ -15,12 +15,13 @@
 # Analysis of 10 Mutants of the Range class
 
 ### getLowerBound : replaced double return with 0.0d for org/jfree/data/Range::getLowerBound -> KILLED
-
+This mutant replaces the return value with 0.0 instead of the lowerBound. This mutant was killed with our original test suite as we had a test for the function getLowerBound() with the range -1,1. By returning 0.0 our test caught it as we were expecting it to return -1.
 
 ### getCentralValue : Substituted 2.0 with 1.0 -> KILLED 
 <br/>This mutant was killed because  
 
 ### getCentralValue : Replaced double addition with subtraction -> KILLED
+This mutant replaces the addition between "this.lower / 2.0" and "this.upper / 2.0" and replaces it with subtraction. This mutant was then killed by our original test suite as the output for all test cases completely changes. For example our test with a range of -1,1 expects a return of 0, however with this mutant the return becomes (-1 / 2) - (1 / 2) = -1 and thus the test case fails and mutant is killed.
 
 ### shift : removed call to org/jfree/data/util/ParamChecks::nullNotPermitted -> SURVIVED
 
