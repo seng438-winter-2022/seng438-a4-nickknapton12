@@ -56,6 +56,9 @@ This mutant substitutes the 0.0 in "if(value > 0.0)" to 1.0. This mutant survive
 # A discussion of what could have been done to improve the mutation score of the test suites
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
+Mutation testing is needed to verify the completeness of our test suite. It introduces changes to the code to ensure that your test cases can correctly detect the change, this is also called "bug injection". The general idea with this then is that if our test suite can detect a variety of "injected bugs"/Mutants then our test suite is more likely to be an effictive test suite. In summary we need mutation testing to help verify the effectiveness of our test suite.
+
+Some advantages of mutant testing is the ability to measure quality of test cases, detect potential gaps in your test suite, know when to stop testing, and compare testing strategies. Mutant testing just gives another metric to evaluate how well we have tested the SUT.
 
 # Explain your SELENUIM test case design process
 Our test case design process involved identifying key functionalities of the system, such as longing in and purchasing items, then writing test which verify the system is running properly.
