@@ -18,7 +18,7 @@ In this lab we experimented with mutation testing on the JFreeChart software pro
 This mutant replaces the return value with 0.0 instead of the lowerBound. This mutant was killed with our original test suite as we had a test for the function getLowerBound() with the range -1,1. By returning 0.0 our test caught it as we were expecting it to return -1.
 
 ### getCentralValue : Substituted 2.0 with 1.0 -> KILLED 
-<br/>This mutant changes the 'this.lower / 2.0' to 'this.lower / 1.0'. We can see that our original test suite tests this function using a range of -1 to 1. Thus, the statement will originally give -0.5 but the mutant will make it -1. This is the improper value and will be killed.  
+This mutant changes the 'this.lower / 2.0' to 'this.lower / 1.0'. We can see that our original test suite tests this function using a range of -1 to 1. Thus, the statement will originally give -0.5 but the mutant will make it -1. This is the improper value and will be killed.  
 
 ### getCentralValue : Replaced double addition with subtraction -> KILLED
 This mutant replaces the addition between "this.lower / 2.0" and "this.upper / 2.0" and replaces it with subtraction. This mutant was then killed by our original test suite as the output for all test cases completely changes. For example our test with a range of -1,1 expects a return of 0, however with this mutant the return becomes (-1 / 2) - (1 / 2) = -1 and thus the test case fails and mutant is killed.
@@ -27,13 +27,13 @@ This mutant replaces the addition between "this.lower / 2.0" and "this.upper / 2
 This mutant removes the call to nullNotPermitted at the start of the function completely. This mutant survived in our original test suite as we didnt create a test that gave a null Range. This caused all our original unit tests to pass as none of them utilized this function call.
 
 ### contains : greater than to less or equal -> KILLED
-<br/>This mutant changes the boolean return from 'return (value >= this.lower && value <= this.upper);' to 'return (value <= this.lower && value <= this.upper);'. This mutant will be killed by our test case that has range or -1 to 1 with value equal to 0 because originally this retrurn will be true but with the mutant value <= this.lower will be false. Since the mutant will be false and not the expected true it will be killed. 
+This mutant changes the boolean return from 'return (value >= this.lower && value <= this.upper);' to 'return (value <= this.lower && value <= this.upper);'. This mutant will be killed by our test case that has range or -1 to 1 with value equal to 0 because originally this retrurn will be true but with the mutant value <= this.lower will be false. Since the mutant will be false and not the expected true it will be killed. 
 
 ### min : removed conditional - replaced equality check with false -> SURVIVED
-<br/>This mutant will replace the 'Double.isNaN(d1)' with false. Since we did not explicitly test this function in our assignment 3 test suite the mutant survived. However, if we created a test where d1 is not a number then this mutant would be killed. 
+This mutant will replace the 'Double.isNaN(d1)' with false. Since we did not explicitly test this function in our assignment 3 test suite the mutant survived. However, if we created a test where d1 is not a number then this mutant would be killed. 
 
 ### shift : negated conditional -> SURVIVED
-<br/>This mutant will negate the allowZeroCrossing boolean. i.e if the boolean is false it will make it true and vice versa. Since we did not test the shift function extensively this mutant was not killed. 
+This mutant will negate the allowZeroCrossing boolean. i.e if the boolean is false it will make it true and vice versa. Since we did not test the shift function extensively this mutant was not killed. 
 
 ### expand : removed call to org/jfree/data/Range::getLength -> KILLED
 This mutant removed the call to getLength in "double length = getLength()". This mutant failed as it then tried to subtract the uninitialized "length" and resulted in an error, causing the test to fail and the mutant to be killed.
@@ -42,7 +42,7 @@ This mutant removed the call to getLength in "double length = getLength()". This
 This mutant substitutes the 0.0 in "if(value > 0.0)" to 1.0. This mutant survived our original tests as all the tests we had either had value less then 0 (in this case the expected equility doesnt change) or value was greator then 1.0 (which again wouldnt result in a change of expected equality).
 
 ### equals : replaced boolean return with false for org/jfree/data/Range::equals -> KILLED
-<br/> This mutant will change the 'return true' statement to 'return false'. This will cause the mutant to be killed for any test cases that reaches that line of the equals(Object obj) function. 
+ This mutant will change the 'return true' statement to 'return false'. This will cause the mutant to be killed for any test cases that reaches that line of the equals(Object obj) function. 
 
 
 # Report all the statistics and the mutation score for each test class
