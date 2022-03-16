@@ -61,6 +61,11 @@ Throughout the Range class there are many equivalent mutants that make the mutat
 
 These equivalent mutants cannot be "killed" because the have the same behaviour as the original program. This then can artificially decrease the mutation score accuracy and make it appear lower then it actually is. Because of this, testers should use caution when analyzing the mutation coverage and take into account the equivalent mutants.
 
+# Detecting Equivalent Mutants
+When performing our mutant tests we made sure to keep an eye out for equivalent mutants. We did this mainly by analizing the code as we looked at "surviving mutants" and traceing through to see if the mutant is equivilent to the original code. This however wa very time intensive and took a while everytime we tried to evaluate. An easy one to detect we found was incrementing the return variable (a++) causing the variable to increment after it returns and thus being equivent to the original code.
+
+We did some research on how you could maybe automatically detect equivalent mutants and it seems like an active area of research. And while we couldnt come up with any ideas on how you could (effictively) detect equivalent mutants, we did come up with an infeasable way. You could take the mutant and the original code and loop though tons of posible inputs and compare their outputs, any ones that survive the large test set and produce the same output are most likely equivilent. However this is definetly not feasable!
+
 # A discussion of what could have been done to improve the mutation score of the test suites
 Our group decided to look through the functions were were testing to figure out how each mutation could alter an outcome. We then looked for test cases that could fit this criteria. For example if a mutation changed a < b to a <= b we would make sure we had a test case where a == b so the mutation would be killed. Using this process to iterate through the mutation report we were able to improve the mutation score of the test suites. Our group found that most mutations were sensitive to boundary testing and variables found in multiple decision statements. In order to improve mutation score tester's should focus on adding tests that will are on boundaries and are used in multiple decision statements. This should maximize the amount of mutations killed.
 
