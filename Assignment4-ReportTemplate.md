@@ -46,11 +46,15 @@ This mutant substitutes the 0.0 in "if(value > 0.0)" to 1.0. This mutant survive
 
 
 # Report all the statistics and the mutation score for each test class
+<img src='./media/RangeTestPitCoverage.png'/>
+<img src='./media/DataUtilitiesPitCoverage.png'/>
+<img src='./media/RangeTestPitTestCoverage.png'/>
+<img src='./media/'/>
 
 
 
 # Analysis drawn on the effectiveness of each of the test classes
-
+Our DataUtilities test class was highly effective from lab assignment 3 however, we were still able to find other mutants to kill fro the improvement of our test suite. For our Range test class it was not near as effective from lab 3 as DataUtitlities so we were able to improve it by a greater margin. It is important to note that many of the unresolved mutants in the Range class were equivalent mutants. 
 # A discussion on the effect of equivalent mutants on mutation score accuracy
 Throughout the Range class there are many euqivalent mutants that make the mutation score appear much lower than it actually is. For example, there are several increment and decrement mutations where it decrements a variable in the return line, however , since it will decrement the variable after it returns the mutant is equivalent.
 # A discussion of what could have been done to improve the mutation score of the test suites
