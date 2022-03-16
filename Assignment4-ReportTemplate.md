@@ -52,7 +52,7 @@ This mutant substitutes the 0.0 in "if(value > 0.0)" to 1.0. This mutant survive
 # Analysis drawn on the effectiveness of each of the test classes
 
 # A discussion on the effect of equivalent mutants on mutation score accuracy
-
+Throughout the Range class there are many euqivalent mutants that make the mutation score appear much lower than it actually is. For example, there are several increment and decrement mutations where it decrements a variable in the return line, however , since it will decrement the variable after it returns the mutant is equivalent.
 # A discussion of what could have been done to improve the mutation score of the test suites
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
@@ -74,9 +74,10 @@ Assertions are used to make sure the system ends in the correct state. Checkpoin
 
 
 # How the team work/effort was divided and managed
-Each of us created 2 test cases using selenium.
+Our group split into pairs and one pair did the DataUtilities mutation testing while the other did the Range mutationt testing. Then each group member did 2 GUI tests. Finally, each group member helped create the lab report.
 
 # Difficulties encountered, challenges overcome, and lessons learned
+During our testing we had some difficulties interpretting how certain mutatnts worked and figuring out which mutants were equivalent. Eventually, we were able to solve these problems and learn more about how specific mutants would operate in a test setting.
 
 
 # Comments/feedback on the lab itself
