@@ -49,7 +49,7 @@ This mutant substitutes the 0.0 in "if(value > 0.0)" to 1.0. This mutant survive
 <img src='./media/RangeTestPitCoverage.png'/>
 <img src='./media/DataUtilitiesPitCoverage.png'/>
 <img src='./media/RangeTestPitTestCoverage.png'/>
-<img src='./media/'/>
+<img src='./media/DataUtilitiesPitTestCoverage.png'/>
 
 
 
