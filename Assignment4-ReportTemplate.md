@@ -55,10 +55,12 @@ This mutant substitutes the 0.0 in "if(value > 0.0)" to 1.0. This mutant survive
 
 # Analysis drawn on the effectiveness of each of the test classes
 Our DataUtilities test class was highly effective from lab assignment 3 however, we were still able to find other mutants to kill fro the improvement of our test suite. For our Range test class it was not near as effective from lab 3 as DataUtitlities so we were able to improve it by a greater margin. It is important to note that many of the unresolved mutants in the Range class were equivalent mutants. 
+
 # A discussion on the effect of equivalent mutants on mutation score accuracy
 Throughout the Range class there are many equivalent mutants that make the mutation score appear much lower than it actually is. For example, there are several increment and decrement mutations where it decrements a variable in the return line, however , since it will decrement the variable after it returns the mutant is equivalent. However in the DataUtilities class we found much less equivalent mutants and thus the mutation coverage more accurately represents the true "mutation coverage" of our tests.
 
 These equivalent mutants cannot be "killed" because the have the same behaviour as the original program. This then can artificially decrease the mutation score accuracy and make it appear lower then it actually is. Because of this, testers should use caution when analyzing the mutation coverage and take into account the equivalent mutants.
+
 # A discussion of what could have been done to improve the mutation score of the test suites
 Our group decided to look through the functions were were testing to figure out how each mutation could alter an outcome. We then looked for test cases that could fit this criteria. For example if a mutation changed a < b to a <= b we would make sure we had a test case where a == b so the mutation would be killed. Using this process to iterate through the mutation report we were able to improve the mutation score of the test suites. Our group found that most mutations were sensitive to boundary testing and variables found in multiple decision statements. In order to improve mutation score tester's should focus on adding tests that will are on boundaries and are used in multiple decision statements. This should maximize the amount of mutations killed.
 
