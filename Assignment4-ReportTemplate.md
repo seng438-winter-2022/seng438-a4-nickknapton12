@@ -82,7 +82,7 @@ Our test case design process involved identifying key functionalities of the sys
 Assertions are used to make sure the system ends in the correct state. Checkpoints are used for when longer paths must be taken, ensuring that the correct paths are being taken prior to running specified tests.
 
 # how did you test each functionaity with different test data
-
+We made many individual test cases, each with different data, including null, and NaN. For some tests we used paramaterized testing allowing us to test many test data quickly and efficiently.
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
 
