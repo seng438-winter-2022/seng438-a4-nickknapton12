@@ -46,9 +46,16 @@ This mutant substitutes the 0.0 in "if(value > 0.0)" to 1.0. This mutant survive
 
 
 # Report all the statistics and the mutation score for each test class
+Our Range tests initially had a mutant coverage of 67%.
 <img src='./media/RangeTestPitCoverage.png'/>
+
+Our DataUtilities tests initially had a mutant coverage of 88%.
 <img src='./media/DataUtilitiesPitCoverage.png'/>
+
+We were able to increase our Range tests 10% to 77% by following our testing strategy.
 <img src='./media/RangeTestPitTestCoverage.png'/>
+
+We were able to increase our DataUtilities tests to 91%. This is due to the fact that our tests initially had very good mutant coverage and the result was that there wasnt many more mutants to fix that were not equivilent or that made logical sense (eg. mutants that changed the condition to "less than" on a boolean conditional). 
 <img src='./media/DataUtilitiesPitTestCoverage.png'/>
 
 
