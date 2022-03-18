@@ -86,19 +86,19 @@ Our test case design process involved identifying key functionalities of the sys
 
 
 # Explain the use of assertions and checkpoints
-Assertions are used to make sure the system ends in the correct state. Checkpoints are used for when longer paths must be taken, ensuring that the correct paths are being taken prior to running specified tests.
+Verification checkpoints were used to make sure the system was in the correct state prior to making assert statements. They are used for when longer paths must be taken, ensuring that the correct paths are being taken prior to running specified tests. An example of this is for when changing the languages for a user, to do so one must first login. A checkpoint is used in order to ensure login was successful, before asserting the language change was successful. 
 
 # how did you test each functionaity with different test data
-We made many individual test cases, each with different data, including null, and NaN. For some tests we used paramaterized testing allowing us to test many test data quickly and efficiently.
+We tested functionalities such as login using first, incorrect login information. Ensuring failure when trying to login. Then we used correct credentials and ensured that the login was successful. Another test we did was on postal code, ensuring that using bad data for a postal code resulted in no matches. Outside of this, most of our tested focused on key functionalities of the system, as mandated by our test case design process. Our tests included purchasing items, searching for items, and switching languages. These tests did not rely on external data but instead were tests of key user interactions on the website. 
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
-
+The advantages of using selenium is directly specifying the components of the website you want to click. As Sikulix uses image recognition, it operates in such a way that if the css of a website were to be updated, the tests would likely need to be updated. For Selenium, css elements are directly specified, allowing you to click items that might not even be currently displayed. Selenium works more intuitively for us as it also allows you to record the actions taken on a webpage, directly creating the tests. Sikulix also might have problems when scaling a website as buttons on mobile may be different.
 
 # How the team work/effort was divided and managed
 Our group split into pairs and one pair did the DataUtilities mutation testing while the other did the Range mutationt testing. Then each group member did 2 GUI tests. Finally, each group member helped create the lab report.
 
 # Difficulties encountered, challenges overcome, and lessons learned
-During our testing we had some difficulties interpretting how certain mutatnts worked and figuring out which mutants were equivalent. Eventually, we were able to solve these problems and learn more about how specific mutants would operate in a test setting.
+During our testing we had some difficulties interpretting how certain mutatnts worked and figuring out which mutants were equivalent. Eventually, we were able to solve these problems and learn more about how specific mutants would operate in a test setting. For the GUI testing, we each learnt how to test websites, but also how we can use selenium to write scripts for websites not necessarily focused on testing.
 
 
 # Comments/feedback on the lab itself
